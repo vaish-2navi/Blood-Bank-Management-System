@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Issue History - BBMS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .issue-container {
+            max-width: 1100px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        .issue-header {
+            background: #b91c1c;
+            color: white;
+            padding: 24px;
+            border-radius: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .issue-header h1 { margin: 0 0 8px; }
+        .issue-header p { margin: 0; }
+
+        .issue-refresh {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .issue-summary {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 2px 10px #00000012;
+        }
+
+        .issue-table-wrap {
+            overflow-x: auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px #00000012;
+        }
+
+        .issue-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 850px;
+        }
+
+        .issue-table th,
+        .issue-table td {
+            padding: 13px;
+            border-bottom: 1px solid #eeeeee;
+            text-align: left;
+        }
+
+        .issue-table th {
+            background: #fff1f2;
+            color: #991b1b;
+        }
+
+        .issue-status {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #dcfce7;
+            color: #166534;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .issue-message {
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main class="issue-container">
+        <header class="issue-header">
+            <div>
+                <h1>🩸 Blood Issue History</h1>
+                <p>View blood units issued against approved requests.</p>
+            </div>
+            <button class="issue-refresh" id="refreshIssues">
+                ↻ Refresh
+            </button>
+        </header>
+
+        <section class="issue-summary">
+            <h2>Total Issue Records: <span id="totalIssues">0</span></h2>
+            <p>Total Units Issued: <strong id="totalQuantity">0</strong></p>
+        </section>
+
+        <section class="issue-table-wrap">
+            <div id="issueMessage" class="issue-message">
+                Loading issue history...
+            </div>
+
+            <table class="issue-table" id="issueTable" hidden>
+                <thead>
+                    <tr>
+                        <th>Issue ID</th>
+                        <th>Request ID</th>
+                        <th>Blood Group</th>
+                        <th>Component</th>
+                        <th>Quantity</th>
+                        <th>Blood Unit ID</th>
+                        <th>Issued By</th>
+                        <th>Issue Date</th>
+                    </tr>
+                </thead>
+                <tbody id="issueTableBody"></tbody>
+            </table>
+        </section>
+
+        
+<p style="margin-top:20px">
+    <a href="requests.html" class="issue-back-btn">
+        Back to Blood Requests
+    </a>
+</p>
+
+    </main>
+
+    <script src="js/blood-issues.js"></script>
+</body>
+</html>

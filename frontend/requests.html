@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Requests - BBMS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="requests-page">
+
+    <!-- Header -->
+    <header class="requests-header">
+        <div class="requests-header-icon">🩸</div>
+
+        <div class="requests-header-text">
+            <h2>Blood Requests</h2>
+            <p>Request and track required blood units</p>
+        </div>
+
+        <a href="notifications.html" class="requests-notification">
+            🔔
+        </a>
+    </header>
+
+
+    <main class="requests-container">
+
+        <!-- Intro Card -->
+        <section class="request-intro-card">
+            <div class="request-intro-icon">❤️</div>
+
+            <div>
+                <h1>Blood Requirement</h1>
+                <p>
+                    Submit a blood request and track its approval and fulfillment status.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Request Button -->
+        <section class="request-button-section">
+            <button type="button"
+                    class="request-main-button"
+                    id="showRequestForm">
+                🩸 Request Blood
+            </button>
+        </section>
+
+
+        <!-- Request Form -->
+        <section id="requestFormSection" class="request-form-section">
+
+            <div class="request-section-heading">
+                <div>
+                    <h2>New Blood Request</h2>
+                    <p>Enter the required blood details below.</p>
+                </div>
+            </div>
+
+            <div class="request-form-card">
+
+                <form id="bloodRequestForm">
+
+                    <div class="request-form-grid">
+
+                        <!-- Blood Group -->
+                        <div class="request-form-group">
+                            <label for="requestBloodGroup">
+                                Blood Group
+                            </label>
+
+                            <select id="requestBloodGroup" required>
+                                <option value="">Select Blood Group</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A−</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B−</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O−</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB−</option>
+                            </select>
+                        </div>
+
+
+                        <!-- Component -->
+                        <div class="request-form-group">
+                            <label for="requestComponent">
+                                Component Type
+                            </label>
+
+                            <select id="requestComponent" required>
+                                <option value="">Select Component</option>
+                                <option value="Whole Blood">
+                                    Whole Blood
+                                </option>
+                                <option value="Plasma">
+                                    Plasma
+                                </option>
+                                <option value="Platelets">
+                                    Platelets
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <!-- Quantity -->
+                        <div class="request-form-group">
+                            <label for="requestQuantity">
+                                Quantity (Units)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="requestQuantity"
+                                min="1"
+                                placeholder="Enter quantity"
+                                required
+                            >
+                        </div>
+
+
+                        <!-- Urgency -->
+                        <div class="request-form-group">
+                            <label for="requestUrgency">
+                                Urgency
+                            </label>
+
+                            <select id="requestUrgency" required>
+                                <option value="normal">
+                                    Normal
+                                </option>
+
+                                <option value="urgent">
+                                    Urgent
+                                </option>
+
+                                <option value="critical">
+                                    Critical
+                                </option>
+                            </select>
+                        </div>
+
+
+                        <!-- Required Date -->
+                        <div class="request-form-group">
+                            <label for="requiredDate">
+                                Required Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="requiredDate"
+                            >
+                        </div>
+
+
+                        <!-- Reason -->
+                        <div class="request-form-group request-full-width">
+                            <label for="requestReason">
+                                Reason
+                            </label>
+
+                            <textarea
+                                id="requestReason"
+                                rows="4"
+                                placeholder="Enter reason for blood requirement"
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Form Buttons -->
+                    <div class="request-form-actions">
+
+                        <button
+                            type="submit"
+                            class="request-submit-button"
+                        >
+                            ✓ Submit Request
+                        </button>
+
+                        <button
+                            type="button"
+                            class="request-cancel-button"
+                            id="cancelRequest"
+                        >
+                            Cancel
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recent Requests -->
+        <section class="recent-requests-section">
+
+            <div class="request-section-heading">
+                <div>
+                    <h2>Recent Requests</h2>
+                    <p>View your blood request history and status.</p>
+                </div>
+            </div>
+
+            <div id="requestsContainer">
+                <div class="request-loading">
+                    <div>🩸</div>
+                    <p>Loading requests...</p>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+
+        <a href="index.html" class="nav-item">
+            <span>🏠</span>
+            <small>Home</small>
+        </a>
+
+        <a href="blood-stock.html" class="nav-item">
+            <span>📦</span>
+            <small>Stock</small>
+        </a>
+
+        <a href="requests.html" class="nav-item active">
+            <span>📋</span>
+            <small>Requests</small>
+        </a>
+
+        <a href="donate.html" class="nav-item">
+            <span>🩸</span>
+            <small>Donate</small>
+        </a>
+
+        <a href="profile.html" class="nav-item">
+            <span>👤</span>
+            <small>Profile</small>
+        </a>
+
+    </nav>
+
+
+    <!-- Request Details Modal -->
+    <div id="requestDetailsModal" class="request-modal">
+
+        <div class="request-modal-content">
+
+            <div class="request-modal-header">
+
+                <div>
+                    <span>🩸</span>
+                    <h2>Request Details</h2>
+                </div>
+
+                <button
+                    type="button"
+                    id="closeRequestModal"
+                    class="modal-close"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+            <div id="requestDetailsContent">
+                <p>Loading request details...</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="js/script.js"></script>
+    <script src="js/requests.js"></script>
+
+</body>
+</html>

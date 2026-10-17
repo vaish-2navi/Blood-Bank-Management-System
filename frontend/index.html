@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Bank Management System</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            🩸 <span>BloodBank</span>
+        </div>
+
+        <div class="notification">
+            🔔
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container">
+
+        <!-- Welcome Section -->
+        <section class="welcome">
+            <div>
+                <p class="small-text">Welcome to</p>
+
+                <h1>Blood Bank Management System</h1>
+
+                <p>
+                    Save lives by connecting blood donors with those in need.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- Blood Stock Summary -->
+        <section>
+
+            <div class="section-title">
+                <h2>Blood Stock</h2>
+
+                <a href="blood-stock.html">View All</a>
+            </div>
+
+
+            <div class="blood-grid">
+
+                <div class="blood-card">
+                    <div class="blood-icon">A+</div>
+                    <h3>A Positive</h3>
+                    <p>12 Units</p>
+                </div>
+
+
+                <div class="blood-card">
+                    <div class="blood-icon">A−</div>
+                    <h3>A Negative</h3>
+                    <p>8 Units</p>
+                </div>
+
+
+                <div class="blood-card">
+                    <div class="blood-icon">B+</div>
+                    <h3>B Positive</h3>
+                    <p>15 Units</p>
+                </div>
+
+
+                <div class="blood-card">
+                    <div class="blood-icon">B−</div>
+                    <h3>B Negative</h3>
+                    <p>5 Units</p>
+                </div>
+
+
+                <div class="blood-card">
+                    <div class="blood-icon">O+</div>
+                    <h3>O Positive</h3>
+                    <p>20 Units</p>
+                </div>
+
+
+                <div class="blood-card">
+                    <div class="blood-icon">O−</div>
+                    <h3>O Negative</h3>
+                    <p>6 Units</p>
+                </div>
+
+
+                <div class="blood-card">
+                    <div class="blood-icon">AB+</div>
+                    <h3>AB Positive</h3>
+                    <p>7 Units</p>
+                </div>
+
+
+                <div class="blood-card">
+                    <div class="blood-icon">AB−</div>
+                    <h3>AB Negative</h3>
+                    <p>3 Units</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Quick Actions -->
+        <section class="quick-section">
+
+            <div class="section-title">
+                <h2>Quick Actions</h2>
+            </div>
+
+
+            <div class="action-grid">
+
+                <button
+                    class="action-card"
+                    onclick="showMessage('Blood Request')"
+                >
+                    📋
+                    <span>Request Blood</span>
+                </button>
+
+
+                <button
+                    class="action-card"
+                    onclick="showMessage('Blood Donation')"
+                >
+                    🩸
+                    <span>Donate Blood</span>
+                </button>
+
+
+                <button
+                    class="action-card"
+                    onclick="showMessage('Donors')"
+                >
+                    👤
+                    <span>Find Donors</span>
+                </button>
+
+
+                <button
+                    class="action-card"
+                    onclick="showMessage('Availability')"
+                >
+                    🔍
+                    <span>Check Availability</span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Urgent Requests -->
+        <section class="urgent-section">
+
+            <div class="section-title">
+
+                <h2>Urgent Requests</h2>
+
+                <a href="requests.html">View All</a>
+
+            </div>
+
+
+            <div class="request-card">
+
+                <div>
+
+                    <span class="urgent-badge">
+                        URGENT
+                    </span>
+
+                    <h3>O− Blood Required</h3>
+
+                    <p>City Care Hospital</p>
+
+                </div>
+
+
+                <button
+                    onclick="showMessage('Blood Request Details')"
+                >
+                    View
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+
+        <a href="index.html" class="nav-item active">
+            <span>🏠</span>
+            <small>Home</small>
+        </a>
+
+
+        <a href="blood-stock.html" class="nav-item">
+            <span>📦</span>
+            <small>Stock</small>
+        </a>
+
+
+        <a href="requests.html" class="nav-item">
+            <span>📋</span>
+            <small>Requests</small>
+        </a>
+
+
+        <a href="donate.html" class="nav-item">
+            <span>🩸</span>
+            <small>Donate</small>
+        </a>
+
+
+        <a href="profile.html" class="nav-item">
+            <span>👤</span>
+            <small>Profile</small>
+        </a>
+
+    </nav>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

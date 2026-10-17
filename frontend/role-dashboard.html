@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Dashboard - BBMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        🩸 <span>BloodBank</span>
+    </div>
+
+    <button class="logout-btn" onclick="logout()">
+        Logout
+    </button>
+
+</header>
+
+
+<main class="container">
+
+    <section class="welcome">
+
+        <p class="small-text">
+            Blood Bank Management System
+        </p>
+
+        <h1 id="dashboardTitle">
+            Dashboard
+        </h1>
+
+        <p id="dashboardSubtitle">
+            Welcome to your dashboard.
+        </p>
+
+    </section>
+
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                Quick Access
+            </h2>
+
+        </div>
+
+
+        <div class="role-actions" id="roleActions">
+
+            <!-- JavaScript will load role-specific actions -->
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<script src="js/auth.js"></script>
+
+</body>
+
+</html>

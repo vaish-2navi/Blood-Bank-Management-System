@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Donor Profile - BBMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* ================================
+           DONOR PROFILE PAGE
+        ================================= */
+
+        body {
+            background: #f7f8fa;
+        }
+
+        .profile-page {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 25px 20px 40px;
+        }
+
+
+        /* Header */
+
+        .profile-top {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .back-btn {
+            width: 42px;
+            height: 42px;
+            border: none;
+            border-radius: 50%;
+            background: #ffffff;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .profile-top-text h1 {
+            margin: 0;
+            font-size: 25px;
+            color: #222;
+        }
+
+        .profile-top-text p {
+            margin: 4px 0 0;
+            color: #777;
+            font-size: 14px;
+        }
+
+
+        /* Profile Banner */
+
+        .profile-banner {
+            background: linear-gradient(
+                135deg,
+                #d71920,
+                #ef5350
+            );
+
+            color: white;
+            border-radius: 22px;
+            padding: 25px;
+
+            display: flex;
+            align-items: center;
+            gap: 18px;
+
+            margin-bottom: 22px;
+
+            box-shadow:
+                0 8px 25px rgba(215, 25, 32, 0.20);
+        }
+
+        .profile-avatar {
+            width: 70px;
+            height: 70px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.20);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 35px;
+
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .profile-banner h2 {
+            margin: 0 0 5px;
+            font-size: 21px;
+        }
+
+        .profile-banner p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+
+        /* Form Card */
+
+        .profile-card {
+            background: #ffffff;
+
+            border-radius: 20px;
+
+            padding: 28px;
+
+            box-shadow:
+                0 5px 20px rgba(0, 0, 0, 0.07);
+
+            margin-bottom: 20px;
+        }
+
+
+        /* Section Title */
+
+        .form-section-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            margin-bottom: 20px;
+
+            padding-bottom: 12px;
+
+            border-bottom: 1px solid #eeeeee;
+        }
+
+        .form-section-title .icon {
+            width: 36px;
+            height: 36px;
+
+            border-radius: 10px;
+
+            background: #fff0f0;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 18px;
+        }
+
+        .form-section-title h3 {
+            margin: 0;
+
+            font-size: 18px;
+
+            color: #222;
+        }
+
+
+        /* Form Group */
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            color: #333;
+        }
+
+
+        /* Inputs */
+
+        .profile-card input,
+        .profile-card select,
+        .profile-card textarea {
+
+            width: 100%;
+
+            box-sizing: border-box;
+
+            border: 1px solid #dddddd;
+
+            border-radius: 12px;
+
+            padding: 12px 14px;
+
+            font-size: 14px;
+
+            background: #fafafa;
+
+            outline: none;
+
+            transition: 0.2s;
+        }
+
+        .profile-card input:focus,
+        .profile-card select:focus,
+        .profile-card textarea:focus {
+
+            border-color: #d71920;
+
+            background: #ffffff;
+
+            box-shadow:
+                0 0 0 3px rgba(215, 25, 32, 0.08);
+        }
+
+        .profile-card textarea {
+            resize: vertical;
+            min-height: 95px;
+        }
+
+
+        /* Two Column Layout */
+
+        .form-row {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+        }
+
+
+        /* Blood Group */
+
+        #bloodGroup {
+
+            font-weight: 600;
+
+        }
+
+
+        /* Help Text */
+
+        .field-help {
+
+            font-size: 12px;
+
+            color: #888;
+
+            margin-top: 5px;
+        }
+
+
+        /* Save Button */
+
+        .save-profile-btn {
+
+            width: 100%;
+
+            border: none;
+
+            border-radius: 13px;
+
+            padding: 14px;
+
+            background: #d71920;
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+            margin-top: 5px;
+        }
+
+        .save-profile-btn:hover {
+
+            background: #b9151b;
+
+            transform: translateY(-1px);
+        }
+
+        .save-profile-btn:active {
+
+            transform: translateY(0);
+        }
+
+
+        /* Bottom Note */
+
+        .profile-note {
+
+            text-align: center;
+
+            color: #888;
+
+            font-size: 12px;
+
+            margin-top: 15px;
+        }
+
+
+        /* Mobile */
+
+        @media (max-width: 600px) {
+
+            .profile-page {
+
+                padding: 18px 14px 30px;
+            }
+
+            .profile-card {
+
+                padding: 20px 16px;
+            }
+
+            .profile-banner {
+
+                padding: 20px;
+
+                border-radius: 18px;
+            }
+
+            .profile-avatar {
+
+                width: 58px;
+                height: 58px;
+
+                font-size: 28px;
+            }
+
+            .profile-banner h2 {
+
+                font-size: 18px;
+            }
+
+            .form-row {
+
+                grid-template-columns: 1fr;
+
+                gap: 0;
+            }
+
+            .profile-top-text h1 {
+
+                font-size: 21px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================================
+     HEADER
+================================= -->
+
+<header class="header">
+
+    <div class="logo">
+        🩸 <span>BloodBank</span>
+    </div>
+
+    <button
+        class="logout-btn"
+        onclick="logout()"
+    >
+        Logout
+    </button>
+
+</header>
+
+
+
+<!-- ================================
+     MAIN
+================================= -->
+
+<main class="profile-page">
+
+
+    <!-- Page Heading -->
+
+    <div class="profile-top">
+
+        <button
+            class="back-btn"
+            onclick="history.back()"
+            title="Go Back"
+        >
+            ←
+        </button>
+
+        <div class="profile-top-text">
+
+            <h1>Donor Profile</h1>
+
+            <p>
+                Manage your donor information
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ================================
+         PROFILE BANNER
+    ================================= -->
+
+    <section class="profile-banner">
+
+        <div class="profile-avatar">
+            🩸
+        </div>
+
+        <div>
+
+            <h2>Donor Information</h2>
+
+            <p>
+                Keep your information updated
+                for safe blood donation.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         PROFILE FORM
+    ================================= -->
+
+    <form id="donorProfileForm">
+
+
+        <!-- Personal Details -->
+
+        <section class="profile-card">
+
+            <div class="form-section-title">
+
+                <div class="icon">
+                    👤
+                </div>
+
+                <h3>
+                    Personal Information
+                </h3>
+
+            </div>
+
+
+            <!-- Blood Group + DOB -->
+
+            <div class="form-row">
+
+
+                <div class="form-group">
+
+                    <label for="bloodGroup">
+                        Blood Group *
+                    </label>
+
+                    <select
+                        id="bloodGroup"
+                        required
+                    >
+
+                        <option value="">
+                            Select Blood Group
+                        </option>
+
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+
+                    </select>
+
+                    <div class="field-help">
+                        Select your correct blood group.
+                    </div>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label for="dateOfBirth">
+                        Date of Birth *
+                    </label>
+
+                    <input
+                        type="date"
+                        id="dateOfBirth"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Gender -->
+
+            <div class="form-group">
+
+                <label for="gender">
+                    Gender *
+                </label>
+
+                <select
+                    id="gender"
+                    required
+                >
+
+                    <option value="">
+                        Select Gender
+                    </option>
+
+                    <option value="Male">
+                        Male
+                    </option>
+
+                    <option value="Female">
+                        Female
+                    </option>
+
+                    <option value="Other">
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- Address -->
+
+            <div class="form-group">
+
+                <label for="address">
+                    Address *
+                </label>
+
+                <textarea
+                    id="address"
+                    placeholder="Enter your complete address"
+                    rows="4"
+                    required
+                ></textarea>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             MEDICAL INFORMATION
+        ================================= -->
+
+        <section class="profile-card">
+
+            <div class="form-section-title">
+
+                <div class="icon">
+                    🏥
+                </div>
+
+                <h3>
+                    Medical Information
+                </h3>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="medicalHistory">
+                    Medical History
+                </label>
+
+                <textarea
+                    id="medicalHistory"
+                    placeholder="Enter medical history, allergies, previous conditions, medications, etc."
+                    rows="5"
+                ></textarea>
+
+                <div class="field-help">
+                    This information helps staff check your
+                    donation eligibility.
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================================
+             SAVE
+        ================================= -->
+
+        <section class="profile-card">
+
+            <button
+                type="submit"
+                class="save-profile-btn"
+            >
+                💾 Save Donor Profile
+            </button>
+
+            <p class="profile-note">
+                Your information is stored securely
+                in the Blood Bank Management System.
+            </p>
+
+        </section>
+
+
+    </form>
+
+
+</main>
+
+
+
+<!-- ================================
+     SCRIPTS
+================================= -->
+
+<script src="js/auth.js"></script>
+
+<script src="js/donor-profile.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Profile - BBMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+
+        /* ================================
+           PROFILE PAGE
+        ================================= */
+
+        body {
+            background: #f7f8fa;
+        }
+
+        .profile-page {
+            min-height: 100vh;
+            padding-bottom: 90px;
+        }
+
+
+        /* ================================
+           HEADER
+        ================================= */
+
+        .profile-header {
+
+            background: #ffffff;
+
+            padding: 18px 22px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            border-bottom: 1px solid #eeeeee;
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 100;
+        }
+
+        .profile-header-icon {
+
+            width: 44px;
+            height: 44px;
+
+            border-radius: 13px;
+
+            background: #fff0f0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 21px;
+        }
+
+        .profile-header-text {
+            flex: 1;
+        }
+
+        .profile-header-text h2 {
+
+            margin: 0;
+
+            font-size: 20px;
+
+            color: #222;
+        }
+
+        .profile-header-text p {
+
+            margin: 3px 0 0;
+
+            font-size: 12px;
+
+            color: #888;
+        }
+
+        .profile-notification {
+
+            width: 40px;
+            height: 40px;
+
+            border-radius: 50%;
+
+            background: #fff0f0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
+
+            font-size: 18px;
+        }
+
+
+        /* ================================
+           MAIN
+        ================================= */
+
+        .profile-container {
+
+            max-width: 850px;
+
+            margin: 0 auto;
+
+            padding: 25px 20px 30px;
+        }
+
+
+        /* ================================
+           PROFILE HERO
+        ================================= */
+
+        .profile-hero {
+
+            background: linear-gradient(
+                135deg,
+                #d71920,
+                #ef5350
+            );
+
+            color: white;
+
+            border-radius: 22px;
+
+            padding: 28px 25px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 18px;
+
+            margin-bottom: 25px;
+
+            box-shadow:
+                0 8px 25px rgba(215, 25, 32, 0.20);
+        }
+
+        .profile-avatar {
+
+            width: 75px;
+            height: 75px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.20);
+
+            border: 2px solid rgba(255,255,255,0.5);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 35px;
+        }
+
+        .profile-hero h1 {
+
+            margin: 0 0 5px;
+
+            font-size: 23px;
+
+            text-transform: capitalize;
+        }
+
+        .profile-hero-email {
+
+            margin: 0 0 10px;
+
+            font-size: 13px;
+
+            opacity: 0.9;
+        }
+
+        .profile-role {
+
+            display: inline-block;
+
+            padding: 5px 12px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.18);
+
+            border: 1px solid rgba(255,255,255,0.35);
+
+            font-size: 11px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.5px;
+        }
+
+
+        /* ================================
+           SECTION
+        ================================= */
+
+        .profile-section {
+
+            margin-bottom: 22px;
+        }
+
+        .profile-section-heading {
+
+            margin-bottom: 12px;
+        }
+
+        .profile-section-heading h2 {
+
+            margin: 0;
+
+            font-size: 19px;
+
+            color: #222;
+        }
+
+        .profile-section-heading p {
+
+            margin: 4px 0 0;
+
+            font-size: 13px;
+
+            color: #888;
+        }
+
+
+        /* ================================
+           PROFILE CARD
+        ================================= */
+
+        .profile-option-card {
+
+            background: #ffffff;
+
+            border-radius: 18px;
+
+            padding: 18px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            text-decoration: none;
+
+            color: inherit;
+
+            margin-bottom: 12px;
+
+            border: 1px solid #eeeeee;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.05);
+
+            transition: 0.2s;
+        }
+
+        .profile-option-card:hover {
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 7px 20px rgba(0,0,0,0.08);
+
+            border-color: #f0c5c5;
+        }
+
+
+        /* Icon */
+
+        .profile-option-icon {
+
+            width: 48px;
+            height: 48px;
+
+            flex-shrink: 0;
+
+            border-radius: 14px;
+
+            background: #fff0f0;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+        }
+
+
+        /* Text */
+
+        .profile-option-content {
+
+            flex: 1;
+        }
+
+        .profile-option-content h3 {
+
+            margin: 0 0 4px;
+
+            font-size: 15px;
+
+            color: #222;
+        }
+
+        .profile-option-content p {
+
+            margin: 0;
+
+            font-size: 12px;
+
+            color: #888;
+
+            line-height: 1.4;
+        }
+
+
+        /* Arrow */
+
+        .profile-option-arrow {
+
+            color: #aaa;
+
+            font-size: 23px;
+        }
+
+
+        /* ================================
+           SECURITY
+        ================================= */
+
+        .security-card {
+
+            background: #ffffff;
+
+            border-radius: 18px;
+
+            padding: 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 15px;
+
+            border: 1px solid #eeeeee;
+
+            box-shadow:
+                0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .security-icon {
+
+            width: 48px;
+            height: 48px;
+
+            border-radius: 14px;
+
+            background: #f1f7ff;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 22px;
+        }
+
+        .security-content {
+
+            flex: 1;
+        }
+
+        .security-content h3 {
+
+            margin: 0 0 4px;
+
+            font-size: 15px;
+
+            color: #222;
+        }
+
+        .security-content p {
+
+            margin: 0;
+
+            font-size: 12px;
+
+            color: #888;
+
+            line-height: 1.4;
+        }
+
+
+        /* ================================
+           LOGOUT
+        ================================= */
+
+        .profile-logout-btn {
+
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border: 1px solid #f0caca;
+
+            border-radius: 13px;
+
+            background: #fff5f5;
+
+            color: #d71920;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .profile-logout-btn:hover {
+
+            background: #d71920;
+
+            color: #ffffff;
+        }
+
+
+        /* ================================
+           BOTTOM NAV
+        ================================= */
+
+        .bottom-nav {
+
+            position: fixed;
+
+            bottom: 0;
+
+            left: 0;
+
+            right: 0;
+
+            height: 68px;
+
+            background: #ffffff;
+
+            border-top: 1px solid #eeeeee;
+
+            display: flex;
+
+            justify-content: space-around;
+
+            align-items: center;
+
+            z-index: 200;
+
+            box-shadow:
+                0 -3px 15px rgba(0,0,0,0.06);
+        }
+
+        .bottom-nav .nav-item {
+
+            text-decoration: none;
+
+            color: #777;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 3px;
+
+            font-size: 18px;
+
+            min-width: 60px;
+        }
+
+        .bottom-nav .nav-item small {
+
+            font-size: 10px;
+        }
+
+        .bottom-nav .nav-item.active {
+
+            color: #d71920;
+
+            font-weight: 600;
+        }
+
+
+        /* ================================
+           MOBILE
+        ================================= */
+
+        @media (max-width: 600px) {
+
+            .profile-header {
+
+                padding: 15px;
+            }
+
+            .profile-container {
+
+                padding: 18px 14px 25px;
+            }
+
+            .profile-hero {
+
+                padding: 22px 18px;
+
+                border-radius: 18px;
+            }
+
+            .profile-avatar {
+
+                width: 60px;
+                height: 60px;
+
+                font-size: 28px;
+            }
+
+            .profile-hero h1 {
+
+                font-size: 19px;
+            }
+
+            .profile-option-card {
+
+                padding: 15px;
+            }
+
+            .profile-option-icon {
+
+                width: 44px;
+                height: 44px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body class="profile-page">
+
+
+<!-- ================================
+     HEADER
+================================= -->
+
+<header class="profile-header">
+
+    <div class="profile-header-icon">
+        👤
+    </div>
+
+    <div class="profile-header-text">
+
+        <h2>
+            My Profile
+        </h2>
+
+        <p>
+            Manage your BBMS account
+        </p>
+
+    </div>
+
+    <a
+        href="notifications.html"
+        class="profile-notification"
+    >
+        🔔
+    </a>
+
+</header>
+
+
+
+<!-- ================================
+     MAIN
+================================= -->
+
+<main class="profile-container">
+
+
+    <!-- ================================
+         PROFILE HERO
+    ================================= -->
+
+    <section class="profile-hero">
+
+        <div class="profile-avatar">
+            👤
+        </div>
+
+        <div>
+
+            <h1 id="profileName">
+                User
+            </h1>
+
+            <p
+                id="profileEmail"
+                class="profile-hero-email"
+            >
+                Loading...
+            </p>
+
+            <span
+                id="profileRole"
+                class="profile-role"
+            >
+                USER
+            </span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         ACCOUNT
+    ================================= -->
+
+    <section class="profile-section">
+
+        <div class="profile-section-heading">
+
+            <h2>
+                Account
+            </h2>
+
+            <p>
+                Manage your personal information
+            </p>
+
+        </div>
+
+
+        <a
+            href="#"
+            id="personalInfoOption"
+            class="profile-option-card"
+        >
+
+            <div class="profile-option-icon">
+                👤
+            </div>
+
+            <div class="profile-option-content">
+
+                <h3>
+                    Personal Information
+                </h3>
+
+                <p>
+                    View and manage your profile details
+                </p>
+
+            </div>
+
+            <div class="profile-option-arrow">
+                ›
+            </div>
+
+        </a>
+
+    </section>
+
+
+
+    <!-- ================================
+         MY ACTIVITY
+    ================================= -->
+
+    <section class="profile-section">
+
+        <div class="profile-section-heading">
+
+            <h2>
+                My Activity
+            </h2>
+
+            <p>
+                View your blood bank activities
+            </p>
+
+        </div>
+
+
+        <!-- Donation History -->
+
+        <a
+            href="donate.html"
+            class="profile-option-card"
+        >
+
+            <div class="profile-option-icon">
+                🩸
+            </div>
+
+            <div class="profile-option-content">
+
+                <h3>
+                    Donation History
+                </h3>
+
+                <p>
+                    View your blood donation records
+                </p>
+
+            </div>
+
+            <div class="profile-option-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- Blood Requests -->
+
+        <a
+            href="requests.html"
+            class="profile-option-card"
+        >
+
+            <div class="profile-option-icon">
+                📋
+            </div>
+
+            <div class="profile-option-content">
+
+                <h3>
+                    Blood Requests
+                </h3>
+
+                <p>
+                    Track your blood requests and status
+                </p>
+
+            </div>
+
+            <div class="profile-option-arrow">
+                ›
+            </div>
+
+        </a>
+
+
+
+        <!-- Notifications -->
+
+        <a
+            href="notifications.html"
+            class="profile-option-card"
+        >
+
+            <div class="profile-option-icon">
+                🔔
+            </div>
+
+            <div class="profile-option-content">
+
+                <h3>
+                    Notifications
+                </h3>
+
+                <p>
+                    View your latest notifications
+                </p>
+
+            </div>
+
+            <div class="profile-option-arrow">
+                ›
+            </div>
+
+        </a>
+
+    </section>
+
+
+
+    <!-- ================================
+         SECURITY
+    ================================= -->
+
+    <section class="profile-section">
+
+        <div class="profile-section-heading">
+
+            <h2>
+                Security
+            </h2>
+
+            <p>
+                Manage your account security
+            </p>
+
+        </div>
+
+
+        <div class="security-card">
+
+            <div class="security-icon">
+                🔐
+            </div>
+
+            <div class="security-content">
+
+                <h3>
+                    Security Settings
+                </h3>
+
+                <p>
+                    Your account is protected with secure login.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <button
+            type="button"
+            id="profileLogoutBtn"
+            class="profile-logout-btn"
+        >
+            🚪 Logout
+        </button>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ================================
+     BOTTOM NAVIGATION
+================================= -->
+
+<nav class="bottom-nav">
+
+
+    <a
+        href="index.html"
+        class="nav-item"
+    >
+        <span>🏠</span>
+        <small>Home</small>
+    </a>
+
+
+    <a
+        href="blood-stock.html"
+        class="nav-item"
+    >
+        <span>📦</span>
+        <small>Stock</small>
+    </a>
+
+
+    <a
+        href="requests.html"
+        class="nav-item"
+    >
+        <span>📋</span>
+        <small>Requests</small>
+    </a>
+
+
+    <a
+        href="donate.html"
+        class="nav-item"
+    >
+        <span>🩸</span>
+        <small>Donate</small>
+    </a>
+
+
+    <a
+        href="profile.html"
+        class="nav-item active"
+    >
+        <span>👤</span>
+        <small>Profile</small>
+    </a>
+
+
+</nav>
+
+
+
+<!-- ================================
+     JAVASCRIPT
+================================= -->
+
+<script src="js/profile.js"></script>
+
+</body>
+
+</html>

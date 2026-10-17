@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blood Collection - BBMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .collection-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 22px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .collection-card h2 {
+            margin-bottom: 18px;
+            color: #b71c1c;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 90px;
+            resize: vertical;
+        }
+
+        .donor-info {
+            background: #fff5f5;
+            border-left: 4px solid #c62828;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .donor-info p {
+            margin: 6px 0;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 10px;
+            background: #c62828;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: #a61c1c;
+        }
+
+        .message {
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .success-message {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .error-message {
+            background: #ffebee;
+            color: #c62828;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">
+        🩸 <span>BloodBank</span>
+    </div>
+
+    <a href="notifications.html" style="text-decoration:none;">
+        🔔
+    </a>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <p class="small-text">
+            Staff Panel
+        </p>
+
+        <h1>
+            Blood Collection
+        </h1>
+
+        <p>
+            Record blood donation collected from a donor.
+        </p>
+    </section>
+
+
+    <!-- DONOR SELECTION -->
+
+    <div class="collection-card">
+
+        <h2>Select Donor</h2>
+
+        <div class="form-group">
+
+            <label for="donorSelect">
+                Donor
+            </label>
+
+            <select id="donorSelect">
+
+                <option value="">
+                    Select a donor
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- DONOR INFORMATION -->
+
+        <div class="donor-info" id="donorInfo">
+
+            <p>
+                <strong>Name:</strong>
+                <span id="selectedDonorName">-</span>
+            </p>
+
+            <p>
+                <strong>Blood Group:</strong>
+                <span id="selectedDonorBloodGroup">-</span>
+            </p>
+
+            <p>
+                <strong>Phone:</strong>
+                <span id="selectedDonorPhone">-</span>
+            </p>
+
+            <p>
+                <strong>Email:</strong>
+                <span id="selectedDonorEmail">-</span>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- COLLECTION FORM -->
+
+    <div class="collection-card">
+
+        <h2>Donation Details</h2>
+
+        <form id="staffCollectionForm">
+
+            <div class="form-group">
+
+                <label for="collectionDate">
+                    Donation Date
+                </label>
+
+                <input
+                    type="date"
+                    id="collectionDate"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="collectionBloodGroup">
+                    Blood Group
+                </label>
+
+                <select
+                    id="collectionBloodGroup"
+                    required
+                >
+
+                    <option value="">
+                        Select Blood Group
+                    </option>
+
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="collectionComponent">
+                    Component Type
+                </label>
+
+                <select
+                    id="collectionComponent"
+                    required
+                >
+
+                    <option value="Whole Blood">
+                        Whole Blood
+                    </option>
+
+                    <option value="Plasma">
+                        Plasma
+                    </option>
+
+                    <option value="Platelets">
+                        Platelets
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="collectionQuantity">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="collectionQuantity"
+                    min="1"
+                    value="1"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="collectionHealthStatus">
+                    Health Check Status
+                </label>
+
+                <select
+                    id="collectionHealthStatus"
+                    required
+                >
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="passed">
+                        Passed
+                    </option>
+
+                    <option value="failed">
+                        Failed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="collectionRemarks">
+                    Remarks
+                </label>
+
+                <textarea
+                    id="collectionRemarks"
+                    placeholder="Enter remarks if any..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                🩸 Record Blood Collection
+            </button>
+
+        </form>
+
+
+        <div
+            id="collectionMessage"
+            class="message"
+        ></div>
+
+    </div>
+
+</main>
+
+
+<!-- BOTTOM NAVIGATION -->
+
+<nav class="bottom-nav">
+
+    <a href="role-dashboard.html">
+        🏠
+        <span>Home</span>
+    </a>
+
+    <a href="blood-stock.html">
+        🩸
+        <span>Stock</span>
+    </a>
+
+    <a href="requests.html">
+        📋
+        <span>Requests</span>
+    </a>
+
+    <a href="staff-collection.html">
+        💉
+        <span>Collect</span>
+    </a>
+
+    <a href="profile.html">
+        👤
+        <span>Profile</span>
+    </a>
+
+</nav>
+
+
+<script src="js/staff-collection.js"></script>
+
+</body>
+</html>

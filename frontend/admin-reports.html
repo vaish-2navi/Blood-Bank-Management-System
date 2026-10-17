@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBMS - Admin Reports</title>
+    <link rel="stylesheet" href="css/admin-reports.css">
+</head>
+<body>
+
+    <header class="topbar">
+        <div>
+            <h2>Blood Bank Management System</h2>
+            <p>Admin Reports</p>
+        </div>
+        <button id="backButton">Back to Dashboard</button>
+    </header>
+
+    <main class="container">
+        <h1>Reports Overview</h1>
+        <p class="subtitle">View blood bank activity and inventory summaries.</p>
+
+        <section class="summary-grid">
+            <article class="summary-card">
+                <h3>Total Donors</h3>
+                <p id="totalDonors">Loading...</p>
+            </article>
+
+            <article class="summary-card">
+                <h3>Total Blood Units</h3>
+                <p id="totalUnits">Loading...</p>
+            </article>
+
+            <article class="summary-card">
+                <h3>Pending Requests</h3>
+                <p id="pendingRequests">Loading...</p>
+            </article>
+
+            <article class="summary-card">
+                <h3>Total Donations</h3>
+                <p id="totalDonations">Loading...</p>
+            </article>
+        </section>
+
+        <section class="report-panel">
+            <div class="panel-heading">
+                <div>
+                    <h2>Blood Inventory Report</h2>
+                    <p>Current inventory grouped by blood group and component.</p>
+                
+<div class="report-actions">
+    <button id="refreshButton">Refresh Report</button>
+    <button id="downloadButton">Download CSV</button>
+</div>
+
+
+            <p id="reportMessage" role="status"></p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Blood Group</th>
+                            <th>Component</th>
+                            <th>Available Units</th>
+                            <th>Nearest Expiry</th>
+                            <th>Storage Location</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryReportBody">
+                        <tr>
+                            <td colspan="6">Loading report...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/admin-reports.js"></script>
+</body>
+</html>

@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Blood - BBMS</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f8fa;
+            color: #222;
+            padding-bottom: 85px;
+        }
+
+        .page-container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Header */
+        .donate-header {
+            background: linear-gradient(135deg, #b71c1c, #e53935);
+            color: white;
+            padding: 28px 25px;
+            border-radius: 22px;
+            margin-bottom: 22px;
+            box-shadow: 0 8px 25px rgba(183, 28, 28, 0.18);
+        }
+
+        .donate-header .icon {
+            width: 58px;
+            height: 58px;
+            background: rgba(255,255,255,0.18);
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .donate-header h1 {
+            margin: 0 0 7px;
+            font-size: 28px;
+        }
+
+        .donate-header p {
+            margin: 0;
+            opacity: 0.9;
+            font-size: 15px;
+        }
+
+        /* Cards */
+        .donation-card {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 22px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.07);
+            border: 1px solid #eeeeee;
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .card-title .title-icon {
+            width: 42px;
+            height: 42px;
+            background: #ffebee;
+            color: #c62828;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 21px;
+        }
+
+        .card-title h2 {
+            margin: 0;
+            font-size: 20px;
+            color: #222;
+        }
+
+        .card-title p {
+            margin: 4px 0 0;
+            font-size: 13px;
+            color: #777;
+        }
+
+        /* Form */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-group label {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        .required {
+            color: #d32f2f;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #ddd;
+            border-radius: 11px;
+            font-size: 14px;
+            background: #fff;
+            color: #333;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #d32f2f;
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.08);
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Submit Button */
+        .submit-area {
+            margin-top: 22px;
+        }
+
+        .primary-button {
+            width: 100%;
+            border: none;
+            border-radius: 13px;
+            padding: 14px 20px;
+            background: linear-gradient(135deg, #c62828, #e53935);
+            color: white;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(198, 40, 40, 0.2);
+            transition: 0.2s;
+        }
+
+        .primary-button:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Message */
+        #donationMessage {
+            margin: 15px 0 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* History */
+        #donationHistory {
+            min-height: 70px;
+        }
+
+        .history-empty {
+            text-align: center;
+            padding: 30px 15px;
+            color: #777;
+        }
+
+        .history-empty .empty-icon {
+            font-size: 35px;
+            margin-bottom: 8px;
+        }
+
+        .history-empty p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 68px;
+            background: white;
+            border-top: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+            z-index: 1000;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.06);
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: #777;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 9px 16px;
+            border-radius: 12px;
+            text-align: center;
+            transition: 0.2s;
+        }
+
+        .bottom-nav a:hover {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .bottom-nav a.active {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        /* Responsive */
+        @media (max-width: 650px) {
+
+            .page-container {
+                padding: 14px;
+            }
+
+            .donate-header {
+                padding: 22px 20px;
+                border-radius: 18px;
+            }
+
+            .donate-header h1 {
+                font-size: 24px;
+            }
+
+            .donation-card {
+                padding: 19px;
+                border-radius: 17px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .form-group.full-width {
+                grid-column: auto;
+            }
+
+            .bottom-nav {
+                justify-content: space-around;
+            }
+
+            .bottom-nav a {
+                padding: 8px 8px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <!-- Header -->
+    <div class="donate-header">
+        <div class="icon">🩸</div>
+        <h1>Donate Blood</h1>
+        <p>Your donation can save lives. Thank you for helping someone in need.</p>
+    </div>
+
+
+    <!-- Donation Form -->
+    <div class="donation-card">
+
+        <div class="card-title">
+            <div class="title-icon">🩸</div>
+
+            <div>
+                <h2>Donation Details</h2>
+                <p>Enter the details of your blood donation</p>
+            </div>
+        </div>
+
+
+        <form id="donationForm">
+
+            <div class="form-grid">
+
+                <!-- Donation Date -->
+                <div class="form-group">
+                    <label>
+                        Donation Date <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="date"
+                        id="donationDate"
+                        required
+                    >
+                </div>
+
+
+                <!-- Blood Group -->
+                <div class="form-group">
+                    <label>
+                        Blood Group <span class="required">*</span>
+                    </label>
+
+                    <select id="donationBloodGroup" required>
+
+                        <option value="">
+                            Select Blood Group
+                        </option>
+
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+
+                    </select>
+                </div>
+
+
+                <!-- Component Type -->
+                <div class="form-group">
+                    <label>
+                        Component Type <span class="required">*</span>
+                    </label>
+
+                    <select id="donationComponent" required>
+
+                        <option value="Whole Blood">
+                            Whole Blood
+                        </option>
+
+                        <option value="Plasma">
+                            Plasma
+                        </option>
+
+                        <option value="Platelets">
+                            Platelets
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <!-- Quantity -->
+                <div class="form-group">
+                    <label>
+                        Quantity (Units) <span class="required">*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="donationQuantity"
+                        min="1"
+                        value="1"
+                        required
+                    >
+                </div>
+
+
+                <!-- Health Check -->
+                <div class="form-group">
+                    <label>
+                        Health Check Status <span class="required">*</span>
+                    </label>
+
+                    <select id="healthCheckStatus" required>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="passed">
+                            Passed
+                        </option>
+
+                        <option value="failed">
+                            Failed
+                        </option>
+
+                    </select>
+                </div>
+
+
+                <!-- Remarks -->
+                <div class="form-group full-width">
+
+                    <label>
+                        Remarks
+                    </label>
+
+                    <textarea
+                        id="donationRemarks"
+                        placeholder="Enter any additional information..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- Submit -->
+            <div class="submit-area">
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    🩸 Submit Donation
+                </button>
+
+            </div>
+
+        </form>
+
+
+        <p id="donationMessage"></p>
+
+    </div>
+
+
+    <!-- Donation History -->
+    <div class="donation-card">
+
+        <div class="card-title">
+
+            <div class="title-icon">📋</div>
+
+            <div>
+                <h2>My Donation History</h2>
+                <p>View your previous blood donations</p>
+            </div>
+
+        </div>
+
+
+        <div id="donationHistory">
+
+            <div class="history-empty">
+
+                <div class="empty-icon">⏳</div>
+
+                <p>Loading donation history...</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+
+    <a href="index.html">
+        🏠<br>Home
+    </a>
+
+    <a href="blood-stock.html">
+        📦<br>Stock
+    </a>
+
+    <a href="requests.html">
+        📋<br>Requests
+    </a>
+
+    <a href="donate.html" class="active">
+        🩸<br>Donate
+    </a>
+
+    <a href="profile.html">
+        👤<br>Profile
+    </a>
+
+</nav>
+
+
+<script src="js/donate.js"></script>
+
+</body>
+</html>

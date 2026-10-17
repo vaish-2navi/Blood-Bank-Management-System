@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register - BBMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body class="auth-body">
+
+    <div class="auth-container register-container">
+
+        <div class="auth-logo">
+            🩸
+        </div>
+
+        <h1>Create Account</h1>
+
+        <p class="auth-subtitle">
+            Register with Blood Bank Management System
+        </p>
+
+
+        <form id="registerForm">
+
+            <label>Full Name</label>
+
+            <input
+                type="text"
+                id="registerName"
+                placeholder="Enter full name"
+                required
+            >
+
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                id="registerEmail"
+                placeholder="Enter email"
+                required
+            >
+
+
+            <label>Mobile Number</label>
+
+            <input
+                type="tel"
+                id="registerPhone"
+                placeholder="Enter mobile number"
+                required
+            >
+
+
+            <label>Select Role</label>
+
+            <select id="registerRole" required>
+
+                <option value="">
+                    Select your role
+                </option>
+
+                <option value="donor">
+                    Donor
+                </option>
+
+                <option value="patient">
+                    Patient / Hospital
+                </option>
+
+                <option value="staff">
+                    Blood Bank Staff
+                </option>
+
+                <option value="admin">
+                    Administrator
+                </option>
+
+            </select>
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="registerPassword"
+                placeholder="Create password"
+                required
+            >
+
+
+            <label>Confirm Password</label>
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm password"
+                required
+            >
+
+
+            <button type="submit" class="auth-btn">
+                Create Account
+            </button>
+
+        </form>
+
+
+        <p class="auth-link">
+
+            Already have an account?
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </p>
+
+
+        <a href="index.html" class="back-home">
+            ← Back to Home
+        </a>
+
+    </div>
+
+
+    <script src="js/auth.js"></script>
+
+</body>
+
+</html>

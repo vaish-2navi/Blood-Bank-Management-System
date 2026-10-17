@@ -1,0 +1,2279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f9fa;
+    color: #222;
+    padding-bottom: 90px;
+}
+
+/* Header */
+
+.header {
+    height: 70px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #d62828;
+}
+
+.notification {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+/* Main Container */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* Welcome */
+
+.welcome {
+    background: #d62828;
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    font-size: 28px;
+    margin: 8px 0;
+}
+
+.small-text {
+    opacity: 0.85;
+}
+
+/* Section */
+
+section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.section-title h2 {
+    font-size: 21px;
+}
+
+.section-title a {
+    color: #d62828;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* Blood Cards */
+
+.blood-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.blood-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+.blood-icon {
+    width: 55px;
+    height: 55px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe5e5;
+    color: #d62828;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.blood-card h3 {
+    margin-top: 12px;
+    font-size: 15px;
+}
+
+.blood-card p {
+    margin-top: 6px;
+    color: #d62828;
+    font-weight: bold;
+}
+
+/* Quick Actions */
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.action-card {
+    border: none;
+    background: white;
+    padding: 22px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 25px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    transition: 0.2s;
+}
+
+.action-card:hover {
+    transform: translateY(-3px);
+}
+
+.action-card span {
+    display: block;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Urgent Request */
+
+.request-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+.request-card h3 {
+    margin: 8px 0;
+}
+
+.request-card p {
+    color: #777;
+}
+
+.request-card button {
+    background: #d62828;
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.urgent-badge {
+    background: #ffe0e0;
+    color: #d62828;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* Bottom Navigation */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 12px rgba(0,0,0,0.1);
+    z-index: 100;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: #777;
+    text-align: center;
+    font-size: 20px;
+}
+
+.nav-item small {
+    display: block;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.nav-item.active {
+    color: #d62828;
+}
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    .blood-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .action-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .welcome h1 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .container {
+        width: 94%;
+    }
+
+    .blood-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .header {
+        padding: 0 4%;
+    }
+}
+/* Primary Button */
+
+.primary-btn {
+    background: #d62828;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.primary-btn:hover {
+    opacity: 0.9;
+}
+
+
+/* Profile */
+
+.profile-card {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    border-radius: 50%;
+    background: #ffe5e5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+}
+
+.profile-card h2 {
+    margin-top: 15px;
+}
+
+.profile-card p {
+    color: #777;
+    margin-top: 5px;
+}
+
+
+/* Profile Options */
+
+.profile-option {
+    background: white;
+    padding: 18px;
+    margin-bottom: 12px;
+    border-radius: 14px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.profile-option:hover {
+    transform: translateX(3px);
+}
+/* =========================
+   AUTHENTICATION
+========================= */
+
+.auth-body {
+    min-height: 100vh;
+    background: #f8f9fa;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+}
+
+
+.auth-container {
+    width: 100%;
+    max-width: 430px;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 5px 25px rgba(0, 0, 0, 0.08);
+
+    text-align: center;
+}
+
+
+.register-container {
+    max-width: 500px;
+}
+
+
+.auth-logo {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffe5e5;
+
+    border-radius: 50%;
+
+    font-size: 35px;
+}
+
+
+.auth-container h1 {
+    color: #222;
+
+    margin-bottom: 8px;
+}
+
+
+.auth-subtitle {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+.auth-container form {
+    text-align: left;
+}
+
+
+.auth-container label {
+    display: block;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 7px;
+
+    margin-top: 15px;
+}
+
+
+.auth-container input,
+.auth-container select {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    background: white;
+}
+
+
+.auth-container input:focus,
+.auth-container select:focus {
+
+    border-color: #d62828;
+}
+
+
+.auth-btn {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #d62828;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+
+.auth-btn:hover {
+    opacity: 0.9;
+}
+
+
+.auth-link {
+
+    margin-top: 20px;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+
+.auth-link a {
+
+    color: #d62828;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+.back-home {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: #555;
+
+    text-decoration: none;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   ROLE DASHBOARD
+========================= */
+
+.logout-btn {
+
+    background: #ffe5e5;
+
+    color: #d62828;
+
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.role-actions {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+
+.role-action-card {
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 3px 12px rgba(0,0,0,0.07);
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.role-action-card:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+@media (max-width: 500px) {
+
+    .auth-container {
+        padding: 25px 20px;
+    }
+
+    .role-actions {
+        grid-template-columns: 1fr;
+    }
+
+}
+/* ================================
+   BLOOD STOCK DETAILS
+================================ */
+
+.stock-details-title {
+    margin-top: 30px;
+}
+
+
+.stock-table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 15px;
+}
+
+
+.stock-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+
+.stock-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+
+.stock-table th,
+.stock-table td {
+    padding: 14px 12px;
+    text-align: left;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.stock-table th {
+    font-size: 14px;
+}
+
+
+.stock-table td {
+    font-size: 14px;
+}
+
+
+.stock-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+
+
+.status-badge.available {
+    background: #e8f7ed;
+}
+
+
+.status-badge.reserved {
+    background: #fff4d6;
+}
+
+
+.status-badge.issued {
+    background: #eeeeee;
+}
+
+
+.status-badge.expired {
+    background: #ffe5e5;
+}
+
+
+.no-stock {
+    padding: 20px;
+    text-align: center;
+}
+/* ================================
+   SEARCH & FILTERS
+================================ */
+
+.stock-filters {
+    margin: 20px 0;
+}
+
+
+.search-box {
+    width: 100%;
+    margin-bottom: 12px;
+}
+
+
+.search-box input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    font-size: 14px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+
+.filter-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+.filter-row select {
+    padding: 11px 12px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    background: white;
+    font-size: 14px;
+}
+
+
+#clearFilters {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+/* =================================
+   BLOOD REQUEST DETAILS MODAL
+================================= */
+
+.request-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.request-modal-content {
+    width: 100%;
+    max-width: 500px;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 24px;
+    box-sizing: border-box;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.request-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.request-modal-header h2 {
+    margin: 0;
+}
+
+.modal-close {
+    border: none;
+    background: transparent;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.request-detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.request-detail-label {
+    font-weight: 600;
+}
+
+.request-detail-value {
+    text-align: right;
+}
+
+.request-status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    text-transform: capitalize;
+}
+/* =================================
+   REQUEST ACTION BUTTONS
+================================= */
+
+.request-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.approve-button,
+.reject-button {
+    border: none;
+    padding: 9px 14px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.approve-button {
+    background: #e8f7ed;
+}
+
+.reject-button {
+    background: #ffe5e5;
+}
+/* =========================================================
+   NOTIFICATIONS PAGE
+   ========================================================= */
+
+.notifications-page {
+    background: #f7f8fa;
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
+
+
+/* =========================================================
+   NOTIFICATION HEADER
+   ========================================================= */
+
+.notification-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 24px 30px;
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.notification-header .header-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0f0;
+    border-radius: 14px;
+
+    font-size: 25px;
+}
+
+.notification-header .header-content h2 {
+    margin: 0;
+    color: #222222;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.notification-header .header-content p {
+    margin: 5px 0 0;
+    color: #777777;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   SUMMARY CARDS
+   ========================================================= */
+
+.notification-summary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+
+    max-width: 1100px;
+    margin: 24px auto 20px;
+
+    padding: 0 30px;
+}
+
+.notification-summary-card {
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+    border-radius: 16px;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+
+    transition: 0.2s ease;
+}
+
+.notification-summary-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+/* Summary icon */
+
+.summary-icon {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 23px;
+}
+
+.total-icon {
+    background: #fff0f0;
+}
+
+.unread-icon {
+    background: #fff5f5;
+}
+
+
+/* Summary text */
+
+.summary-content h3 {
+    margin: 0;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    color: #222222;
+}
+
+.summary-content p {
+    margin: 4px 0 0;
+
+    font-size: 13px;
+    color: #777777;
+}
+
+
+/* =========================================================
+   ACTION SECTION
+   ========================================================= */
+
+.notification-action-section {
+    max-width: 1100px;
+
+    margin: 0 auto 18px;
+
+    padding: 0 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.notification-action-section h3 {
+    margin: 0;
+
+    color: #222222;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.notification-action-section p {
+    margin: 4px 0 0;
+
+    color: #888888;
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MARK ALL BUTTON
+   ========================================================= */
+
+.mark-all-btn {
+    border: none;
+
+    background: #d92323;
+    color: #ffffff;
+
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+
+    white-space: nowrap;
+}
+
+.mark-all-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-1px);
+}
+
+.mark-all-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   NOTIFICATIONS CONTAINER
+   ========================================================= */
+
+.notifications-container {
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 0 30px;
+}
+
+
+/* =========================================================
+   NOTIFICATION CARD
+   ========================================================= */
+
+.notification-card {
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 16px;
+
+    padding: 20px;
+
+    margin-bottom: 14px;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+
+    transition: 0.2s ease;
+}
+
+.notification-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   UNREAD NOTIFICATION
+   ========================================================= */
+
+.notification-card.unread {
+    border-left: 4px solid #d92323;
+
+    background: #fffafa;
+}
+
+
+/* =========================================================
+   NOTIFICATION ICON
+   ========================================================= */
+
+.notification-icon {
+    width: 48px;
+    height: 48px;
+
+    min-width: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0f0;
+
+    border-radius: 13px;
+
+    font-size: 21px;
+}
+
+
+/* =========================================================
+   NOTIFICATION CONTENT
+   ========================================================= */
+
+.notification-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.notification-title-row {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 6px;
+}
+
+.notification-title-row h3 {
+    margin: 0;
+
+    color: #222222;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   NEW BADGE
+   ========================================================= */
+
+.unread-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #d92323;
+
+    color: #ffffff;
+
+    padding: 3px 8px;
+
+    border-radius: 20px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   MESSAGE
+   ========================================================= */
+
+.notification-content > p {
+    margin: 0 0 10px;
+
+    color: #666666;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   DATE
+   ========================================================= */
+
+.notification-content > small {
+    display: block;
+
+    color: #999999;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CARD ACTION
+   ========================================================= */
+
+.notification-card-action {
+    margin-top: 12px;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+}
+
+
+/* Mark as read */
+
+.read-btn {
+    border: 1px solid #d92323;
+
+    background: #ffffff;
+
+    color: #d92323;
+
+    padding: 7px 13px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.read-btn:hover {
+    background: #d92323;
+    color: #ffffff;
+}
+
+
+/* Read status */
+
+.read-status {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 5px;
+
+    color: #2e8b57;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    background: #f0faf4;
+
+    padding: 7px 12px;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.notification-empty {
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 16px;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.notification-empty .empty-icon {
+    width: 65px;
+    height: 65px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff0f0;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+}
+
+.notification-empty h3 {
+    margin: 0 0 7px;
+
+    color: #333333;
+
+    font-size: 18px;
+}
+
+.notification-empty p {
+    margin: 0;
+
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   LOADING STATE
+   ========================================================= */
+
+.notification-loading {
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+
+    border-radius: 16px;
+
+    padding: 45px 20px;
+
+    text-align: center;
+}
+
+.loading-icon {
+    font-size: 28px;
+
+    margin-bottom: 10px;
+}
+
+.notification-loading p {
+    margin: 0;
+
+    color: #888888;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BOTTOM NAVIGATION
+   ========================================================= */
+
+.notifications-page .bottom-nav {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    z-index: 1000;
+
+    height: 70px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.notifications-page .bottom-nav a {
+    min-width: 85px;
+
+    height: 58px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 3px;
+
+    text-decoration: none;
+
+    color: #777777;
+
+    border-radius: 10px;
+
+    transition: 0.2s ease;
+}
+
+.notifications-page .bottom-nav a span {
+    font-size: 19px;
+}
+
+.notifications-page .bottom-nav a small {
+    font-size: 10px;
+}
+
+.notifications-page .bottom-nav a:hover {
+    color: #d92323;
+}
+
+.notifications-page .bottom-nav a.active {
+    color: #d92323;
+
+    background: #fff0f0;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .notification-header {
+        padding: 20px;
+    }
+
+    .notification-header .header-content h2 {
+        font-size: 22px;
+    }
+
+    .notification-summary {
+        grid-template-columns: 1fr;
+
+        padding: 0 20px;
+
+        margin-top: 18px;
+    }
+
+    .notification-action-section {
+        padding: 0 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .mark-all-btn {
+        width: 100%;
+    }
+
+    .notifications-container {
+        padding: 0 20px;
+    }
+
+    .notification-card {
+        padding: 16px;
+
+        gap: 12px;
+    }
+
+    .notification-icon {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+
+        font-size: 18px;
+    }
+
+    .notification-title-row {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+    .notification-title-row h3 {
+        font-size: 15px;
+    }
+
+    .notification-content > p {
+        font-size: 13px;
+    }
+
+    .notifications-page .bottom-nav {
+        height: 65px;
+
+        gap: 0;
+    }
+
+    .notifications-page .bottom-nav a {
+        min-width: 55px;
+
+        height: 55px;
+    }
+
+    .notifications-page .bottom-nav a span {
+        font-size: 17px;
+    }
+
+    .notifications-page .bottom-nav a small {
+        font-size: 8px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .notification-header .header-icon {
+        width: 45px;
+        height: 45px;
+
+        font-size: 21px;
+    }
+
+    .notification-header .header-content h2 {
+        font-size: 20px;
+    }
+
+    .notification-header .header-content p {
+        font-size: 12px;
+    }
+
+    .notification-summary-card {
+        padding: 16px;
+    }
+
+    .summary-icon {
+        width: 44px;
+        height: 44px;
+
+        font-size: 20px;
+    }
+
+    .summary-content h3 {
+        font-size: 24px;
+    }
+
+    .notification-card-action {
+        justify-content: flex-start;
+    }
+
+    .notifications-page .bottom-nav a {
+        min-width: 48px;
+    }
+}
+/* =====================================================
+   BLOOD REQUEST PAGE
+===================================================== */
+
+.requests-page {
+    background: #f8f9fb;
+    min-height: 100vh;
+    padding-bottom: 90px;
+}
+
+
+/* Header */
+
+.requests-header {
+    background: linear-gradient(135deg, #b71c1c, #e53935);
+    color: white;
+    padding: 22px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 4px 15px rgba(183, 28, 28, 0.18);
+}
+
+.requests-header-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.18);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+
+.requests-header-text {
+    flex: 1;
+}
+
+.requests-header-text h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.requests-header-text p {
+    margin: 4px 0 0;
+    font-size: 13px;
+    opacity: 0.9;
+}
+
+.requests-notification {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+
+/* Main */
+
+.requests-container {
+    width: min(100% - 30px, 900px);
+    margin: 22px auto;
+}
+
+
+/* Intro Card */
+
+.request-intro-card {
+    background: white;
+    border-radius: 18px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
+}
+
+.request-intro-icon {
+    width: 58px;
+    height: 58px;
+    border-radius: 16px;
+    background: #fff1f1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.request-intro-card h1 {
+    margin: 0;
+    font-size: 21px;
+    color: #222;
+}
+
+.request-intro-card p {
+    margin: 6px 0 0;
+    color: #777;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+/* Request Button */
+
+.request-button-section {
+    margin: 18px 0;
+}
+
+.request-main-button {
+    width: 100%;
+    border: none;
+    border-radius: 14px;
+    padding: 15px;
+    background: #c62828;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(198,40,40,0.18);
+    transition: 0.2s;
+}
+
+.request-main-button:hover {
+    background: #a91f1f;
+    transform: translateY(-1px);
+}
+
+
+/* Form Section */
+
+.request-form-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.request-section-heading {
+    margin: 25px 0 12px;
+}
+
+.request-section-heading h2 {
+    margin: 0;
+    color: #222;
+    font-size: 19px;
+}
+
+.request-section-heading p {
+    margin: 5px 0 0;
+    color: #777;
+    font-size: 13px;
+}
+
+
+/* Form Card */
+
+.request-form-card {
+    background: white;
+    border-radius: 18px;
+    padding: 22px;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+}
+
+.request-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.request-form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.request-form-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 7px;
+}
+
+.request-form-group input,
+.request-form-group select,
+.request-form-group textarea {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 11px;
+    padding: 12px 13px;
+    font-size: 14px;
+    background: #fff;
+    outline: none;
+    transition: 0.2s;
+}
+
+.request-form-group textarea {
+    resize: vertical;
+}
+
+.request-form-group input:focus,
+.request-form-group select:focus,
+.request-form-group textarea:focus {
+    border-color: #d32f2f;
+    box-shadow: 0 0 0 3px rgba(211,47,47,0.08);
+}
+
+.request-full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* Form Actions */
+
+.request-form-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+}
+
+.request-submit-button,
+.request-cancel-button {
+    flex: 1;
+    border: none;
+    border-radius: 11px;
+    padding: 13px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.request-submit-button {
+    background: #c62828;
+    color: white;
+}
+
+.request-submit-button:hover {
+    background: #a91f1f;
+}
+
+.request-cancel-button {
+    background: #f1f1f1;
+    color: #444;
+}
+
+.request-cancel-button:hover {
+    background: #e5e5e5;
+}
+
+
+/* Recent Requests */
+
+.recent-requests-section {
+    margin-top: 28px;
+}
+
+
+/* Loading */
+
+.request-loading {
+    background: white;
+    border-radius: 16px;
+    padding: 35px 20px;
+    text-align: center;
+    color: #777;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.request-loading div {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.request-loading p {
+    margin: 0;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   REQUEST CARDS
+===================================================== */
+
+.request-card {
+    background: white;
+    border-radius: 17px;
+    padding: 18px;
+    margin-bottom: 15px;
+    border: 1px solid #eeeeee;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.request-card h3 {
+    margin: 0 0 8px;
+    color: #222;
+}
+
+.request-card p {
+    color: #666;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.request-status {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 20px;
+    background: #f3f3f3;
+    color: #444;
+    font-size: 11px;
+    font-weight: 700;
+    margin-top: 7px;
+}
+
+.urgent-badge {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #fff0f0;
+    color: #c62828;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.request-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.request-actions button {
+    border: none;
+    border-radius: 9px;
+    padding: 9px 13px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.approve-button {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.reject-button {
+    background: #ffebee;
+    color: #c62828;
+}
+
+
+/* =====================================================
+   REQUEST MODAL
+===================================================== */
+
+.request-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+}
+
+.request-modal-content {
+    width: min(100%, 600px);
+    max-height: 85vh;
+    overflow-y: auto;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.2);
+}
+
+.request-modal-header {
+    padding: 18px 20px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.request-modal-header div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.request-modal-header h2 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.modal-close {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 10px;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#requestDetailsContent {
+    padding: 20px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    .requests-container {
+        width: min(100% - 20px, 900px);
+    }
+
+    .request-intro-card {
+        padding: 16px;
+    }
+
+    .request-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .request-full-width {
+        grid-column: auto;
+    }
+
+    .request-form-card {
+        padding: 17px;
+    }
+
+    .request-form-actions {
+        flex-direction: column;
+    }
+
+    .requests-header {
+        padding: 18px 15px;
+    }
+
+    .requests-header-text h2 {
+        font-size: 19px;
+    }
+
+}
+
+/* Donor Management - View Button */
+#donorTableContainer table td button,
+#donorTableContainer table td .view-btn,
+#donorTableContainer table td a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    min-width: 76px;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 9px;
+    background: #c52640;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#donorTableContainer table td button:hover,
+#donorTableContainer table td .view-btn:hover,
+#donorTableContainer table td a:hover {
+    background: #a91d34;
+    transform: translateY(-1px);
+}
+
+#donorTableContainer table td button:focus-visible,
+#donorTableContainer table td a:focus-visible {
+    outline: 3px solid #f4a7b4;
+    outline-offset: 3px;
+}
+
+/* Donor Management - Clear Filter Button */
+#clearDonorFilters {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 76px;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 9px;
+    background: #c52640;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#clearDonorFilters:hover {
+    background: #a91d34;
+    transform: translateY(-1px);
+}
+
+#clearDonorFilters:focus-visible {
+    outline: 3px solid #f4a7b4;
+    outline-offset: 3px;
+}
+
+/* Admin User Management - Action Buttons */
+
+/* Deactivate, Block and other action buttons */
+#usersTableContainer button,
+#usersTableContainer .action-btn,
+#usersTableContainer select,
+#usersTableContainer a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    margin: 3px;
+    border: 1px solid #e5b9c1;
+    border-radius: 8px;
+    background: #fff0f2;
+    color: #b91c35;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover effect */
+#usersTableContainer button:hover,
+#usersTableContainer .action-btn:hover,
+#usersTableContainer a:hover {
+    background: #c52640;
+    border-color: #c52640;
+    color: #ffffff;
+}
+
+/* Update Role button */
+#usersTableContainer button.update-role-btn {
+    background: #c52640;
+    border-color: #c52640;
+    color: #ffffff;
+}
+
+#usersTableContainer button.update-role-btn:hover {
+    background: #a91d34;
+}
+
+/* Role dropdown */
+#usersTableContainer select {
+    background: #ffffff;
+    color: #343b49;
+    cursor: pointer;
+}
+
+/* Keyboard focus */
+#usersTableContainer button:focus-visible,
+#usersTableContainer select:focus-visible,
+#usersTableContainer a:focus-visible {
+    outline: 3px solid #f4a7b4;
+    outline-offset: 2px;
+}
+
+/* Action column spacing */
+#usersTableContainer td:last-child {
+    min-width: 250px;
+    line-height: 2;
+}
+
+/* Admin User Management - Action Buttons */
+
+.users-table td:last-child {
+    min-width: 290px;
+    vertical-align: middle;
+}
+
+#usersTableBody button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 13px;
+    margin: 4px 3px 4px 0;
+    border: 1px solid #c52640;
+    border-radius: 8px;
+    background: #c52640;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#usersTableBody button:hover {
+    background: #a91d34;
+    border-color: #a91d34;
+}
+
+/* Role Dropdown */
+#usersTableBody select {
+    min-width: 100px;
+    padding: 8px 10px;
+    margin: 4px 4px 4px 0;
+    border: 1px solid #e0b6be;
+    border-radius: 8px;
+    background: #fff7f8;
+    color: #343b49;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Keyboard Focus */
+#usersTableBody button:focus-visible,
+#usersTableBody select:focus-visible {
+    outline: 3px solid #f4a7b4;
+    outline-offset: 2px;
+}
+
+/* Table spacing */
+.users-table td {
+    line-height: 1.8;
+}
+
+@media (max-width: 600px) {
+    .users-card {
+        padding: 14px;
+    }
+
+    .users-table {
+        min-width: 750px;
+    }
+
+    .users-table td:last-child {
+        min-width: 290px;
+    }
+}
+
+.issue-back-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    background: #c52640;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #c52640;
+    box-shadow: 0 4px 10px #c526402e;
+    transition: 0.2s ease;
+}
+
+.issue-back-btn:hover {
+    background: #a91d34;
+    border-color: #a91d34;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.issue-back-btn:focus-visible {
+    outline: 3px solid #f4a7b4;
+    outline-offset: 3px;
+}
+
+
+
+
+
+
+/* Two-column Login and Register layout */
+body.auth-body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 35px 5%;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    background-color: #fdebec;
+    background-image: url("../images/blood-donation.jpg.jpg");
+    background-size: 70% auto;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Keep the form card on the right */
+body.auth-body .auth-container {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 380px;
+    max-height: calc(100vh - 70px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 26px 28px;
+
+    background: rgba(255, 255, 255, 0.96);
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(120, 20, 30, 0.14);
+}
+
+/* Register form needs a little more vertical room */
+
+body.auth-body .register-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 30px 36px;
+    box-sizing: border-box;
+}
+
+body.auth-body .auth-container:not(.register-container) {
+    max-width: 430px;
+}
+
+/* Mobile layout */
+@media (max-width: 700px) {
+    body.auth-body {
+        justify-content: center;
+        padding: 20px 14px;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+    body.auth-body .auth-container,
+    body.auth-body .register-container {
+        max-width: 380px;
+        max-height: calc(100vh - 40px);
+    }
+}

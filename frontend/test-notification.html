@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notification Test</title>
+</head>
+
+<body>
+
+    <h2>Notification Test</h2>
+
+    <button onclick="createNotification()">
+        Create Test Notification
+    </button>
+
+    <p id="result"></p>
+
+    <script>
+
+        async function createNotification() {
+
+            try {
+
+                const response = await fetch(
+                    "http://127.0.0.1:5000/api/notifications",
+                    {
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            user_id: 1,
+                            title: "Test Notification",
+                            message: "Your blood request has been received successfully.",
+                            notification_type: "request"
+                        })
+                    }
+                );
+
+                const data = await response.json();
+
+                document.getElementById("result").innerText =
+                    JSON.stringify(data, null, 2);
+
+            } catch (error) {
+
+                document.getElementById("result").innerText =
+                    "Error: " + error;
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>

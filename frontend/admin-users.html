@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>User Management - BBMS</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .users-card {
+            background: #fff;
+            padding: 22px;
+            margin-top: 20px;
+            border-radius: 18px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            overflow-x: auto;
+        }
+
+        .users-card h2 {
+            color: #b71c1c;
+            margin-bottom: 16px;
+        }
+
+        .users-search {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-sizing: border-box;
+        }
+
+        .users-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        .users-table th,
+        .users-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .users-table th {
+            background: #fff5f5;
+            color: #b71c1c;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: capitalize;
+        }
+
+        .status-active {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .status-inactive {
+            background: #fff3e0;
+            color: #e65100;
+        }
+
+        .status-blocked {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .users-message {
+            padding: 12px;
+            margin-top: 14px;
+            border-radius: 10px;
+            display: none;
+        }
+
+        .users-error {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .users-info {
+            background: #e3f2fd;
+            color: #1565c0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">
+        🩸 <span>BloodBank</span>
+    </div>
+
+    <button class="logout-btn" onclick="logout()">
+        Logout
+    </button>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <p class="small-text">Administrator Panel</p>
+        <h1>User Management</h1>
+        <p>View and manage registered BBMS accounts.</p>
+    </section>
+
+    <section class="users-card">
+        <h2>Registered Users</h2>
+
+        <p id="userCount">Loading users...</p>
+
+        <input
+            type="search"
+            id="userSearch"
+            class="users-search"
+            placeholder="Search by name, email, phone, role or status..."
+        >
+
+        <div id="usersMessage" class="users-message"></div>
+
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Role</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody id="usersTableBody">
+                <tr>
+                    <td colspan="7">Loading users...</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+<nav class="bottom-nav">
+    <a href="role-dashboard.html">
+        🏠 <span>Home</span>
+    </a>
+
+    <a href="blood-stock.html">
+        🩸 <span>Stock</span>
+    </a>
+
+    <a href="requests.html">
+        📋 <span>Requests</span>
+    </a>
+
+    <a href="profile.html">
+        👤 <span>Profile</span>
+    </a>
+</nav>
+
+<script src="js/auth.js"></script>
+<script src="js/admin-users.js"></script>
+
+</body>
+</html>
