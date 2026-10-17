@@ -182,25 +182,20 @@ Add screenshots of your running application to the `frontend/images/` folder, th
 
 ### Login Page
 
-![Login Page](frontend/images/login-screenshot.png)
 <img width="638" height="291" alt="image" src="https://github.com/user-attachments/assets/2025c116-5828-460e-8447-0617d99a4e3f" />
 
 ### Role Dashboard
 
-![Role Dashboard](frontend/images/dashboard-screenshot.png)
 <img width="640" height="285" alt="image" src="https://github.com/user-attachments/assets/762f86a0-322e-4737-a7ee-e07bea004bf8" />
 
 ### Blood Stock Management
 
-![Blood Stock Management](frontend/images/blood-stock-screenshot.png)
 <img width="631" height="290" alt="image" src="https://github.com/user-attachments/assets/961fab22-8214-47de-a4f4-140a9cd71040" />
 
 ### Admin Reports
 
-![Admin Reports](frontend/images/admin-reports-screenshot.png)
 <img width="629" height="289" alt="image" src="https://github.com/user-attachments/assets/ef526c1c-d38f-4f66-9dee-081e1d956a98" />
 
-> Replace these example screenshot paths with actual screenshots from your application. Until those images are added, the screenshot previews will not display.
 
 ## 🧪 Testing
 
